@@ -1,0 +1,154 @@
+/* GENERAL STYLES */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #000;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.4;
+}
+
+main {
+	padding: 1rem;
+}
+
+/* DIALOG */
+
+h1 {
+	line-height: 1.2;
+}
+
+.dialog {
+	z-index: 20;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border: none;
+	outline: none;
+	background-color: #eee;
+	color: #222;
+	width: min(90vw, 30rem);
+	font-size: 1.125rem;
+	display: grid;
+	gap: 1rem;
+}
+
+/* PARAGRAPHS */
+
+main p {
+	font-size: 1.75rem;
+	margin-block: 1rem;
+}
+
+/* OVERLAY */
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	background-image: radial-gradient(
+			circle at var(--x, 0) var(--y, 0),
+			transparent 0%,
+			black var(--light-size),
+			black 100%
+		),
+		radial-gradient(
+			circle at var(--x, 0) var(--y, 0),
+			rgb(255, 255, 200, 0.18) 0%,
+			transparent var(--light-size),
+			transparent 100%
+		);
+	pointer-events: none;
+}
+
+/* BUTTONS */
+
+button {
+	font: inherit;
+	color: inherit;
+	border: none;
+	background: none;
+	cursor: pointer;
+	outline: none;
+}
+
+button.primary {
+	background-color: orangered;
+	color: white;
+	font-weight: 500;
+	padding: 0.25rem 0.8rem;
+	border-radius: 0.25rem;
+}
+
+button.primary:focus-visible {
+	outline: 2px solid black;
+	outline-offset: 2px;
+}
+
+/* LETTER VARIATIONS */
+
+.colored {
+	color: red;
+}
+
+.underlined {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.bigger {
+	display: inline-block;
+	scale: 1.2;
+}
+
+.shifted {
+	display: inline-block;
+	translate: 0 0.25rem;
+}
+
+.boldface {
+	font-weight: 900;
+}
+
+.flipped {
+	display: inline-block;
+	transform: scaleX(-1);
+}
+
+.times {
+	font-family: "Times New Roman", Times, serif;
+}
+
+.opaque {
+	opacity: 0.1;
+}
+
+.jumping {
+	display: inline-block;
+	animation: jumping 10s linear infinite;
+}
+
+@keyframes jumping {
+	0%,
+	96% {
+		translate: 0 0;
+	}
+	98% {
+		translate: 0 -1rem;
+	}
+}
+
+.vanishes:hover {
+	opacity: 0;
+}
