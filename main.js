@@ -229,6 +229,18 @@ function increase_level() {
 	}
 }
 
+// MAKE CHEATING HARDER
+
+const allowed_keys = ["Tab", "Enter", " "]
+
+document.addEventListener("contextmenu", (e) => e.preventDefault())
+
+document.addEventListener("keydown", (e) => {
+	if (!allowed_keys.includes(e.key)) {
+		e.preventDefault()
+	}
+})
+
 // UTILITIES
 
 /**
